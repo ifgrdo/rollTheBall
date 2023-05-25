@@ -234,23 +234,7 @@ class RTBProblem(search.Problem):
 #-----------------------------------------------------------------------------------------------------------------------------------------------
 
     def h(self, node):
-        '''
-        This heuristic calculates the Manhattan distance between the last tile that the ball reaches from the initial tile 
-        (index_forward) and the last tile the ball reaches from the goal tile (index_backwards)
-
-        This heuristic is admissible because it underestimates the cost. It assumes that there are only empty tiles in the shortest path
-        between index_forward and the index_backwards tiles and that it takes one move (cost=1 per move) to replace each of the empty 
-        tiles by the fitting tile (i.e. fitting tile is assumed to be right next to the empty cell where it fits). Therefore, 
-        heuristics = number of moves needed x cost = Manhattan distance between index_forward and index_backwards tiles - 1.
-        Subtracting 1 is because we only want to count what's in between the index_forward and index_backwards tiles.
-
-        This heuristic is consistent because in each step, the heuristic can only increase/decrease by one and the cost per move is
-        one. Therefore, h(next step) <= cost(=1) + h(current step)
-        Note that when a solution is found, this functions automatically returns zero.
-
-        Since this is a graph-search, and h is consistent, then A* is optimal and complete.
-        '''
-
+       
         index_operation = {'left': -1, 'right': +1, 'top': -self.N, 'down': +self.N}
         opp = {'left': 'right', 'right': 'left', 'top': 'down', 'down': 'top'}
 
