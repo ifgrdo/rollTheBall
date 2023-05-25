@@ -6,3 +6,5 @@ This repository houses the project developed for the Artificial Intelligence and
 - Inês Lucas
 - Ivan Figueiredo
 - Maria Francisca Góis
+
+!(cover.png)
