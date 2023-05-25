@@ -7,4 +7,4 @@ This repository houses the project developed for the Artificial Intelligence and
 - Ivan Figueiredo
 - Maria Francisca Góis
 
-<img src="cover.png" alt="rollTheBall" width="250">
+<img src="cover.png" alt="rollTheBall" width="400">
