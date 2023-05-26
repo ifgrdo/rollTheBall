@@ -1,9 +1,14 @@
 import search
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------
+
 class RTBProblem(search.Problem):
+    
     def __init__ (self):
         self.initial = None
         self.N = 0
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------
 
     def load(self, fh):
         count = 0
@@ -22,6 +27,8 @@ class RTBProblem(search.Problem):
                 puzzle_initial.append(line_splitted)
         
         self.initial = puzzle_initial
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------
 
     #checks possible tiles according to position in puzzle and respective boundaries
     def possibleTiles(self, row, column):
@@ -42,6 +49,8 @@ class RTBProblem(search.Problem):
         elif row > 0 and row < self.N-1 and column > 0 and column < self.N-1: return ['top', 'right', 'down', 'left'] #middle
 
         else: return False
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------
 
     #returns next tile's position and current tile output
     def nextTile(self, row, column, prev_output):
@@ -86,6 +95,7 @@ class RTBProblem(search.Problem):
             elif output == 'down': return [row+1, column, output]
         else: return False
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------
 
     def isSolution(self):
         initial_tile = []
@@ -125,3 +135,5 @@ class RTBProblem(search.Problem):
 
             else:
                 current_tile = next_tile 
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------
